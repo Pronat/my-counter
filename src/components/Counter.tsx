@@ -11,7 +11,7 @@ export const Counter = (props: CounterType) => {
     let incTrue = props.count === 5
     let resetTrue = props.count === 0
 
-    let countClass = incTrue ? "error" : ""
+    let countClass = incTrue ? "error" : "button"
 
     return (
 
@@ -24,6 +24,7 @@ export const Counter = (props: CounterType) => {
                 onClick={props.addCounter}
             >inc</button>
             <button
+                className="button"
                 disabled={resetTrue}
                 onClick={props.resetCounter}
             >reset</button>

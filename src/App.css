@@ -31,3 +31,19 @@
   height: 21px;
   margin-left: 10px;
 }
+
+.button {
+
+}
+
+.button:focus {
+  outline: lightgreen;
+}
+
+.button:active {
+  background: aquamarine;
+}
+
+button:disabled {
+  color: darkgreen;
+}
