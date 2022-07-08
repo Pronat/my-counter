@@ -6,28 +6,21 @@ type CountType = number
 
 function App() {
     const [value, setValue] = useState<number>(0)
-    const addNumber = () => {
+    const addValue = () => {
         setValue(value + 1)
     }
-    const SetToLocalStorage = () => {
-        localStorage.setItem("counterValue", value.toString())
-    }
-    const GetFromLocalStorage = () => {
-        let getValue = localStorage.getItem("counterValue")
-        if (getValue) {
-            setValue(JSON.parse(getValue))
-        }
-    }
+    const setLocalStorageHandler = () => {
+        localStorage.setItem("addValue", JSON.stringify(value))
 
 
     return (
         <div>
-            <h1>{value}</h1>
-            <button onClick={addNumber}>add NUmber</button>
-            <button onClick={SetToLocalStorage}>SetToLocalStorage</button>
-            <button onClick={GetFromLocalStorage}>GetFromLocalStorage</button>
+        <h1>{value}</h1>
+        <button onClick={addValue}>inc</button>
+        <button onClick={setLocalStorageHandler}>setLocalStorage</button>
         </div>
     )
+
 }
 
 
