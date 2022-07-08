@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {Counter} from "./components/Counter";
 
@@ -6,6 +6,15 @@ type CountType = number
 
 function App() {
     const [value, setValue] = useState<number>(0)
+
+   useEffect(()=>{localStorage.setItem("key", JSON.stringify(value))}, [value])
+    useEffect(()=>{
+       let arg = localStorage.getItem("key")
+        if (arg) {
+            setValue(JSON.parse(arg))
+        }
+    }, [])
+
     const addValue = () => {
         setValue(value + 1)
     }
@@ -29,10 +38,10 @@ function App() {
         <div>
             <h1>{value}</h1>
             <button onClick={addValue}>inc</button>
-            <button onClick={setLocalStorageHandler}>setLocalStorage</button>
-            <button onClick={getLocalStorageHandler}>getLocalStorage</button>
-            <button onClick={clearLocalStorageHandler}>clearLocalStorage</button>
-            <button onClick={removeItemLocalStorageHandler}>removeItemLocalStorage</button>
+            {/*<button onClick={setLocalStorageHandler}>setLocalStorage</button>*/}
+            {/*<button onClick={getLocalStorageHandler}>getLocalStorage</button>*/}
+            {/*<button onClick={clearLocalStorageHandler}>clearLocalStorage</button>*/}
+            {/*<button onClick={removeItemLocalStorageHandler}>removeItemLocalStorage</button>*/}
         </div>
     )
 
