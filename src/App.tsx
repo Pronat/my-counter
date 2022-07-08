@@ -11,13 +11,27 @@ function App() {
     }
     const setLocalStorageHandler = () => {
         localStorage.setItem("addValue", JSON.stringify(value))
-
+    }
+    const getLocalStorageHandler = () => {
+        let newGet = localStorage.getItem("addValue")
+        if (newGet) {
+        setValue(JSON.parse(newGet))
+    }}
+    const clearLocalStorageHandler = () => {
+        localStorage.clear()
+    }
+    const removeItemLocalStorageHandler = () => {
+        localStorage.removeItem("addValue")
+    }
 
     return (
         <div>
-        <h1>{value}</h1>
-        <button onClick={addValue}>inc</button>
-        <button onClick={setLocalStorageHandler}>setLocalStorage</button>
+            <h1>{value}</h1>
+            <button onClick={addValue}>inc</button>
+            <button onClick={setLocalStorageHandler}>setLocalStorage</button>
+            <button onClick={getLocalStorageHandler}>getLocalStorage</button>
+            <button onClick={clearLocalStorageHandler}>clearLocalStorage</button>
+            <button onClick={removeItemLocalStorageHandler}>removeItemLocalStorage</button>
         </div>
     )
 
