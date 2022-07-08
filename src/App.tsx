@@ -24,6 +24,7 @@ function App() {
         localStorage.removeItem("addValue")
     }
 
+
     return (
         <div>
             <h1>{value}</h1>
