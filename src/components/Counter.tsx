@@ -8,7 +8,7 @@ type CounterType = {
 
 
 export const Counter = (props: CounterType) => {
-    let incTrue = props.count === 5
+    let incTrue = props.count ===  5
     let resetTrue = props.count === 0
 
     let countClass = incTrue ? "error" : "button"
