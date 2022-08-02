@@ -3,6 +3,13 @@ import s from './Counter.module.css'
 
 const Counter = () => {
     const [count, setCount] = useState<number>(0)
+    const reset = () => {
+        setCount(0)
+    }
+    const addNumber = () => {
+        if (count < 5) {
+        setCount(count +1)
+    }}
     return (
         <div className={s.block}>
             <div className={s.block2}>
@@ -10,8 +17,8 @@ const Counter = () => {
                     <text className={s.text}>{count}</text>
                 </div>
                 <div className={s.buttons}>
-                    <button>inc</button>
-                    <button>reset</button>
+                    <button onClick={addNumber}>inc</button>
+                    <button onClick={reset}>reset</button>
                 </div>
             </div>
         </div>
