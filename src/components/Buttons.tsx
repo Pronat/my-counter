@@ -13,7 +13,7 @@ const Buttons = (props: ButtonsPropsType) => {
         <div className={s.block}>
             <div className={s.block2}>
                 <div className={s.scoreboard}>
-                    <text className={s.text}>{props.count}</text>
+                    <text className={props.count !== props.maxValue ? s.text : s.textError}>{props.count}</text>
                 </div>
                 <div className={s.buttons}>
                     <button onClick={props.addNumber} disabled={props.count === props.maxValue}>inc</button>
