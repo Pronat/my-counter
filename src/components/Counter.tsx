@@ -1,28 +1,25 @@
 import React, {useState} from 'react';
 import s from './Counter.module.css'
 import Buttons from "./Buttons";
+import SetForCounter from "./SetForCounter";
 
-const Counter = () => {
-    const [count, setCount] = useState<number>(0)
-    const maxValue = 5
-    const reset = () => {
-        setCount(0)
-    }
-    const addNumber = () => {
-        if (count < 5) {
-            setCount(count + 1)
-        }
-    }
+type CounterPropsType = {
+    count: number
+    maxValue: number
+    minValue: number
+    reset: () => void
+    addNumber: () => void
+}
 
-
-
+const Counter = (props: CounterPropsType) => {
     return (
-        <div>
+        <div className={s.main}>
             <Buttons
-            count={count}
-            maxValue={maxValue}
-            reset={reset}
-            addNumber={addNumber}
+                count={props.count}
+                maxValue={props.maxValue}
+                minValue={props.minValue}
+                reset={props.reset}
+                addNumber={props.addNumber}
             />
         </div>
     );

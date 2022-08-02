@@ -4,6 +4,7 @@ import s from "./Counter.module.css";
 type ButtonsPropsType = {
     count: number
     maxValue: number
+    minValue: number
     reset: () => void
     addNumber: () => void
 }
@@ -17,7 +18,7 @@ const Buttons = (props: ButtonsPropsType) => {
                 </div>
                 <div className={s.buttons}>
                     <button onClick={props.addNumber} disabled={props.count === props.maxValue}>inc</button>
-                    <button onClick={props.reset} disabled={props.count === 0}>reset</button>
+                    <button onClick={props.reset} disabled={props.count === props.minValue}>reset</button>
                 </div>
             </div>
         </div>

@@ -1,13 +1,14 @@
-.main{
+.main {
     height: 100vh;
     background-color: darkgray;
+    flex-wrap: wrap;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
 }
 
-.block{
+.block {
     border: 2px solid black;
     border-radius: 25px;
     height: 500px;
@@ -17,7 +18,7 @@
     align-items: center;
 }
 
-.block2{
+.block2 {
     border: 2px solid black;
     border-radius: 25px;
     height: 450px;
@@ -28,7 +29,19 @@
     align-items: center;
 }
 
-.scoreboard{
+.setButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button {
+    margin: 20px;
+    max-width: 200px;
+    width: 100%;
+}
+
+.scoreboard {
     border: 2px solid black;
     max-width: 300px;
     width: 100%;
@@ -39,17 +52,17 @@
     align-items: center;
 }
 
-.text{
+.text {
     color: white;
     font-size: 50px;
 }
 
-.textError{
+.textError {
     color: red;
     font-size: 50px;
 }
 
-.buttons{
+.buttons {
     margin: 50px;
     display: flex;
     flex-direction: row;
