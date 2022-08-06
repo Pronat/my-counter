@@ -5,8 +5,8 @@ import SetForCounter from "./SetForCounter";
 
 type CounterPropsType = {
     count: number
-    maxValue: number
-    minValue: number
+    max: number
+    min: number
     reset: () => void
     addNumber: () => void
 }
@@ -16,8 +16,8 @@ const Counter = (props: CounterPropsType) => {
         <div className={s.main}>
             <Buttons
                 count={props.count}
-                maxValue={props.maxValue}
-                minValue={props.minValue}
+                maxValue={props.max}
+                minValue={props.min}
                 reset={props.reset}
                 addNumber={props.addNumber}
             />
