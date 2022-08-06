@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Dispatch, SetStateAction, useState} from 'react';
 import s from './Counter.module.css'
 import Buttons from "./Buttons";
 import SetForCounter from "./SetForCounter";
@@ -9,6 +9,9 @@ type CounterPropsType = {
     min: number | string
     reset: () => void
     addNumber: () => void
+    setCount: any
+    setMinValue: Dispatch<SetStateAction<number | string>>
+    setMaxValue: Dispatch<SetStateAction<number | string>>
 }
 
 const Counter = (props: CounterPropsType) => {
@@ -20,6 +23,9 @@ const Counter = (props: CounterPropsType) => {
                 min={props.min}
                 reset={props.reset}
                 addNumber={props.addNumber}
+                setCount={props.setCount}
+                setMinValue={props.setMinValue}
+                setMaxValue={props.setMaxValue}
             />
         </div>
     );

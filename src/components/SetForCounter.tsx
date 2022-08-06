@@ -6,7 +6,7 @@ type SetForCounterPropsType = {
     setMinValue: Dispatch<SetStateAction<number | string>>
     maxValue: number | string
     minValue: number | string
-    reset: () => void
+    reset: any
 }
 
 const SetForCounter = (props: SetForCounterPropsType) => {

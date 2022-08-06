@@ -35,10 +35,13 @@ function App() {
 
             <Counter
                 count={count}
+                setCount={setCount}
                 reset={reset}
                 addNumber={addNumber}
                 max={maxValue}
                 min={minValue}
+                setMinValue={setMinValue}
+                setMaxValue={setMaxValue}
             />
         </div>
     );
