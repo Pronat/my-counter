@@ -4,8 +4,9 @@ import s from "./Counter.module.css";
 type SetForCounterPropsType = {
     setMaxValue: Dispatch<SetStateAction<number | string>>
     setMinValue: Dispatch<SetStateAction<number | string>>
-    maxValue: number
-    minValue: number
+    maxValue: number | string
+    minValue: number | string
+    reset: () => void
 }
 
 const SetForCounter = (props: SetForCounterPropsType) => {
@@ -20,7 +21,7 @@ const SetForCounter = (props: SetForCounterPropsType) => {
             <div className={`${s.block2} ${s.setButtons}`}>
                 <div>max value<input className={s.button} onChange={onChangeMaxValue} value={props.maxValue} type="text"/></div>
                 <div>min value<input className={s.button} onChange={onChangeMinValue} value={props.minValue} type="text"/></div>
-                <button className={s.button}>set</button>
+                <button className={s.button} onClick={props.reset}>set</button>
             </div>
         </div>
     );

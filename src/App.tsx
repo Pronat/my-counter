@@ -6,17 +6,20 @@ import SetForCounter from "./components/SetForCounter";
 
 
 function App() {
-    const [count, setCount] = useState<number>(0)
     let [minValue, setMinValue] = useState<number | string>(0)
-    let [maxValue, setMaxValue] = useState<number | string>(5)
+    let [maxValue, setMaxValue] = useState<number | string>(0)
+    const [count, setCount] = useState<any>(0)
 
 
     const reset = () => {
-        setCount(0)
+        setCount(Number(minValue))
     }
     const addNumber = () => {
-        if (count < 5) {
+        if (count < maxValue) {
             setCount(count + 1)
+        }
+        else {
+           setCount("Error!!!")
         }
     }
 
@@ -25,6 +28,9 @@ function App() {
             <SetForCounter
                 setMinValue={setMinValue}
                 setMaxValue={setMaxValue}
+                minValue={minValue}
+                maxValue={maxValue}
+                reset={reset}
             />
 
             <Counter
