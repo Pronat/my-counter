@@ -38,8 +38,8 @@ function App() {
                 setCount={setCount}
                 reset={reset}
                 addNumber={addNumber}
-                max={maxValue}
-                min={minValue}
+                maxValue={maxValue}
+                minValue={minValue}
                 setMinValue={setMinValue}
                 setMaxValue={setMaxValue}
             />
