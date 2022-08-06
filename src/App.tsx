@@ -31,6 +31,8 @@ function App() {
                 count={count}
                 reset={reset}
                 addNumber={addNumber}
+                max={maxValue}
+                min={minValue}
             />
         </div>
     );
