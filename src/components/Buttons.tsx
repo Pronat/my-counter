@@ -21,10 +21,10 @@ const Buttons = (props: ButtonsPropsType) => {
         let newValueMin = localStorage.getItem('minValue')
         let newValueMax = localStorage.getItem('maxValue')
         if (newValueMin) {
-            props.setMinValue(newValueMin)
+            props.setMinValue(JSON.parse(newValueMin))
         }
         if (newValueMax) {
-            props.setMinValue(newValueMax)
+            props.setMaxValue(JSON.parse(newValueMax))
         }
     }
 
