@@ -2,7 +2,7 @@ import React from 'react';
 import s from "./Counter.module.css";
 
 type ButtonsPropsType = {
-    count: number
+    count: any
     max: number | string
     min: number | string
     reset: () => void

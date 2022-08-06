@@ -18,9 +18,9 @@ function App() {
         if (count < maxValue) {
             setCount(count + 1)
         }
-        else {
-           setCount("Error!!!")
-        }
+        // if (maxValue <= minValue) {
+        //    setCount("Error!!!")
+        // }
     }
 
     return (

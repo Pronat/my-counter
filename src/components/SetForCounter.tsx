@@ -19,8 +19,8 @@ const SetForCounter = (props: SetForCounterPropsType) => {
     return (
         <div className={s.block}>
             <div className={`${s.block2} ${s.setButtons}`}>
-                <div>max value<input className={s.button} onChange={onChangeMaxValue} value={props.maxValue} type="text"/></div>
-                <div>min value<input className={s.button} onChange={onChangeMinValue} value={props.minValue} type="text"/></div>
+                <div>max value: <input className={s.button} onChange={onChangeMaxValue} value={props.maxValue} type="text"/></div>
+                <div>min value: <input className={s.button} onChange={onChangeMinValue} value={props.minValue} type="text"/></div>
                 <button className={s.button} onClick={props.reset}>set</button>
             </div>
         </div>
