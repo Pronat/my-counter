@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 export type ButtonsType = {
     count: number
@@ -6,6 +6,7 @@ export type ButtonsType = {
     reset: () => void
 }
 export const Buttons: React.FC<ButtonsType> = (props) => {
+    let [error, setError] = useState<string | null>(null)
     const addNumberHandler = () => {props.addNumber()}
     const resetHandler = () => {props.reset()}
     return (
