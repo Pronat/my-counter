@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import {Buttons} from "./Buttons";
 
 
 export function App() {
@@ -7,35 +8,22 @@ export function App() {
     let [maxValue, setMaxValue] = useState<number>(0)
     const [count, setCount] = useState<number>(0)
 
-
+    const addNumber = () => {
+        setCount(count + 1)
+    }
     const reset = () => {
         setCount(Number(minValue))
     }
-    const addNumber = () => {
-        if (count < maxValue) {
-            setCount(count + 1)
-        }
 
-    }
 
     return (
-        <div >
-            <Buttons/>
-
-
+        <div>
+            <Buttons
+                count={count}
+                addNumber={addNumber}
+                reset={reset}
+            />
         </div>
     );
 }
 
-export type ButtonsType = {
-
-}
-
-export const Buttons: React.FC<ButtonsType> = () => {
-    return (
-        <div>
-        <button>inc</button>
-        <button>reset</button>
-        </div>
-        )
-    }
