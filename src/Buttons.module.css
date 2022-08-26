@@ -1,15 +1,34 @@
 .buttonsMain {
- background-color: gray;
- border: 2px darkgreen solid;
- border-radius: 25px;
- height: 200px;
- width:200px;
- display: flex;
- flex-direction: column;
- justify-content: center;
+    background-color: gray;
+    border: 2px darkgreen solid;
+    border-radius: 25px;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
+.message {
+    display: flex;
+    justify-content: center;
+}
+
 .red {
- color: red
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+
+.result {
+    color: blue;
+    font-size: 40px;
+    margin: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
 }

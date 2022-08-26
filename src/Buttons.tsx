@@ -20,9 +20,9 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
     const resetHandler = () => {props.reset()}
     return (
         <div className={s.buttonsMain}>
-            <span className={error ? s.red : ''}>Error</span>
-            <button>{props.count}</button>
-            <div>
+            <span className={error ? s.red : s.message}>Error</span>
+            <button className={s.result}>{props.count}</button>
+            <div className={s.buttons}>
                 <button disabled={props.count === 10} onClick={addNumberHandler}>inc</button>
                 <button disabled={props.count === 0} onClick={resetHandler}>reset</button>
             </div>
