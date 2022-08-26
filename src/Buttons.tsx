@@ -17,15 +17,9 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
 
 
     const addNumberHandler = () => {
-        if (props.count < props.maxValue
-            && props.minValue !== props.maxValue) {
-            props.addNumber()
-        } else {
-            props.setError('Wrong input!!!')
-            console.log(props.error)
-
-        }
+        props.addNumber()
     }
+
     const resetHandler = () => {
         props.reset()
     }

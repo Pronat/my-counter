@@ -22,7 +22,7 @@ export const Values: React.FC<ValuesType> = (props) => {
 
     const setResetHandler = () => {
         if (props.minValue >= props.maxValue) {
-            props.setError("Wrong!!!")
+            props.setError("Wrong number!!!")
         }
         setToLocalStorageHandler()
         props.resetHandler()
