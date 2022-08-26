@@ -8,7 +8,7 @@ export function App() {
     // let [maxValue, setMaxValue] = useState<number>(0)
     const [count, setCount] = useState<number>(0)
     const minValue = 0
-    const maxValue = 8
+    const maxValue = 12
 
 
     const addNumber = () => {

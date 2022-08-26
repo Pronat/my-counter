@@ -27,7 +27,7 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
                 <div className={error || props.count === 0 ? s.red : ""}>{props.count}</div>
             </button>
             <div className={s.buttons}>
-                <button disabled={props.count === (props.maxValue + 1)} onClick={addNumberHandler}>inc</button>
+                <button disabled={props.count === props.maxValue} onClick={addNumberHandler}>inc</button>
                 <button disabled={props.count === props.minValue} onClick={resetHandler}>reset</button>
             </div>
         </div>
