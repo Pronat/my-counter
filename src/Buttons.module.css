@@ -1,3 +1,9 @@
+.main {
+    display: flex;
+    flex-direction: row;
+
+}
+
 .buttonsMain {
     margin:100px;
     background-color: gray;
@@ -33,4 +39,10 @@
 .buttons {
     display: flex;
     justify-content: center;
+}
+
+.input {
+   display: flex;
+    flex-direction: column;
+
 }
