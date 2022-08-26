@@ -25,6 +25,15 @@ export const Values: React.FC<ValuesType> = (props) => {
         localStorage.setItem('counterMinValue', JSON.stringify(props.minValue))
     }
 
+    const getFromLocalStorageHandler = () => {
+        let valueMax = localStorage.get('counterMaxValue')
+        let valueMin = localStorage.get('counterMinValue')
+        if (valueMax && valueMin) {
+            props.setMaxValue(JSON.parse(valueMax))
+            props.setMinValue(JSON.parse(valueMin))
+        }
+    }
+
     return (
         <div>
         <div className={s.inputValue}>
@@ -34,7 +43,7 @@ export const Values: React.FC<ValuesType> = (props) => {
             <div className={s.buttonsValues}>
                 <button onClick={setResetHandler}>set</button>
                 <button onClick={setToLocalStorageHandler}>set LS</button>
-                <button>get LS</button>
+                <button onClick={getFromLocalStorageHandler}>get LS</button>
             </div>
         </div>
     );
