@@ -7,6 +7,7 @@ export function App() {
     let [minValue, setMinValue] = useState<number>(1)
     let [maxValue, setMaxValue] = useState<number>(8)
     const [count, setCount] = useState<number>(0)
+    let [error, setError] = useState<string | null>(null)
 
     const addNumber = () => {
         setCount(count + 1)
@@ -26,6 +27,8 @@ export function App() {
                 maxValue={maxValue}
                 setMinValue={setMinValue}
                 setMaxValue={setMaxValue}
+                error={error}
+                setError={setError}
             />
         </div>
     );

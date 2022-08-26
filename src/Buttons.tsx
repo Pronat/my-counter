@@ -10,16 +10,21 @@ export type ButtonsType = {
     maxValue: number
     setMinValue: Dispatch<SetStateAction<number>>
     setMaxValue: Dispatch<SetStateAction<number>>
+    error: string | null
+    setError: Dispatch<SetStateAction<string | null>>
 }
 export const Buttons: React.FC<ButtonsType> = (props) => {
-    let [error, setError] = useState<string | null>(null)
+
 
     const addNumberHandler = () => {
-        if ( props.count === props.maxValue
-            || props.minValue >= props.maxValue) {
-            setError('Wrong input!!!')
-        } else {
+        debugger
+        if (props.count < props.maxValue
+            && props.minValue !== props.maxValue) {
             props.addNumber()
+        } else {
+            props.setError('Wrong input!!!')
+            console.log(props.error)
+
         }
     }
     const resetHandler = () => {
@@ -28,7 +33,7 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
     return (
         <div className={s.main}>
             <div className={s.buttonsMain}>
-                <div className={s.red}>{error}</div>
+                <div className={s.red}>{props.error}</div>
                 <button className={s.result}>
                     <div className={
                         props.count === props.maxValue
@@ -37,8 +42,10 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
                             ? s.red : ""}>{props.count}</div>
                 </button>
                 <div className={s.buttons}>
-                    <button disabled={props.count === props.maxValue ||  props.minValue >= props.maxValue}
-                            onClick={addNumberHandler}>inc</button>
+                    <button
+                        disabled={props.count === props.maxValue || props.minValue >= props.maxValue}
+                        onClick={addNumberHandler}>inc
+                    </button>
                     <button disabled={props.count === props.minValue} onClick={resetHandler}>reset</button>
                 </div>
             </div>
@@ -49,6 +56,8 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
                     setMinValue={props.setMinValue}
                     setMaxValue={props.setMaxValue}
                     resetHandler={resetHandler}
+                    error={props.error}
+                    setError={props.setError}
                 />
             </div>
         </div>
