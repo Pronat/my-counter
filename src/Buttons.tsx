@@ -15,11 +15,10 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
     let [error, setError] = useState<string | null>(null)
 
     const addNumberHandler = () => {
-        if (props.count === props.maxValue) {
+        if ( props.count === props.maxValue
+            || props.minValue >= props.maxValue) {
             setError('Wrong input!!!')
-            alert(error)
         } else {
-            setError("")
             props.addNumber()
         }
     }

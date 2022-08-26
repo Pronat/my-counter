@@ -27,8 +27,8 @@ export const Values: React.FC<ValuesType> = (props) => {
     }
 
     const getFromLocalStorageHandler = () => {
-        let valueMax = localStorage.get('counterMaxValue')
-        let valueMin = localStorage.get('counterMinValue')
+        let valueMax = localStorage.getItem('counterMaxValue')
+        let valueMin = localStorage.getItem('counterMinValue')
         if (valueMax && valueMin) {
             props.setMaxValue(JSON.parse(valueMax))
             props.setMinValue(JSON.parse(valueMin))
