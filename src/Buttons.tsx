@@ -17,7 +17,6 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
 
 
     const addNumberHandler = () => {
-        debugger
         if (props.count < props.maxValue
             && props.minValue !== props.maxValue) {
             props.addNumber()
@@ -51,6 +50,7 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
             </div>
             <div className={s.buttonsMain}>
                 <Values
+                    count={props.count}
                     minValue={props.minValue}
                     maxValue={props.maxValue}
                     setMinValue={props.setMinValue}

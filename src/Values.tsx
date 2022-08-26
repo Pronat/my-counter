@@ -2,6 +2,7 @@ import React, {ChangeEvent, Dispatch, SetStateAction} from 'react';
 import s from './Buttons.module.css'
 
 export type ValuesType = {
+    count: number
     minValue: number
     maxValue: number
     setMinValue: Dispatch<SetStateAction<number>>
@@ -20,7 +21,7 @@ export const Values: React.FC<ValuesType> = (props) => {
     }
 
     const setResetHandler = () => {
-        if (props.minValue === props.maxValue) {
+        if (props.minValue >= props.maxValue) {
             props.setError("Wrong!!!")
         }
         setToLocalStorageHandler()
