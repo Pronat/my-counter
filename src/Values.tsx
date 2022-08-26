@@ -10,7 +10,6 @@ export type ValuesType = {
 }
 
 export const Values: React.FC<ValuesType> = (props) => {
-    debugger
     const onChangeMinValue = (e: ChangeEvent<HTMLInputElement>) => {
     props.setMinValue(Number(e.currentTarget.value))
     }
@@ -18,7 +17,9 @@ export const Values: React.FC<ValuesType> = (props) => {
     props.setMaxValue(Number(e.currentTarget.value))
     }
 
-    const setResetHandler = () => {props.resetHandler()}
+    const setResetHandler = () => {
+        setToLocalStorageHandler()
+        props.resetHandler()}
 
     const setToLocalStorageHandler = () => {
         localStorage.setItem('counterMaxValue', JSON.stringify(props.maxValue))
@@ -42,7 +43,7 @@ export const Values: React.FC<ValuesType> = (props) => {
         </div>
             <div className={s.buttonsValues}>
                 <button onClick={setResetHandler}>set</button>
-                <button onClick={setToLocalStorageHandler}>set LS</button>
+                {/*<button onClick={setToLocalStorageHandler}>set LS</button>*/}
                 <button onClick={getFromLocalStorageHandler}>get LS</button>
             </div>
         </div>
