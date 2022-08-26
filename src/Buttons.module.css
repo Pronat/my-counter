@@ -41,8 +41,20 @@
     justify-content: center;
 }
 
+.buttonsValues {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .input {
+    margin: 20px;
+    width: 100px;
    display: flex;
     flex-direction: column;
+}
+
+.inputValue {
 
 }

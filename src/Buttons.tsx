@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {Dispatch, SetStateAction, useState} from "react";
 import s from './Buttons.module.css'
 import {Values} from "./Values";
 
@@ -8,6 +8,8 @@ export type ButtonsType = {
     reset: () => void
     minValue: number
     maxValue: number
+    setMinValue: Dispatch<SetStateAction<number>>
+    setMaxValue: Dispatch<SetStateAction<number>>
 }
 export const Buttons: React.FC<ButtonsType> = (props) => {
     let [error, setError] = useState<string | null>(null)
@@ -35,7 +37,12 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
             </div>
         </div>
             <div className={s.buttonsMain}>
-                <Values />
+                <Values
+                    minValue={props.minValue}
+                    maxValue={props.maxValue}
+                    setMinValue={props.setMinValue}
+                    setMaxValue={props.setMaxValue}
+                />
             </div>
         </div>
     )
