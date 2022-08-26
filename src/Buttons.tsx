@@ -27,6 +27,7 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
 
     const resetHandler = () => {
         props.reset()
+        props.setError(null)
     }
     return (
         <div className={s.main}>
