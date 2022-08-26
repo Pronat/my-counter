@@ -6,9 +6,11 @@ export type ValuesType = {
     maxValue: number
     setMinValue: Dispatch<SetStateAction<number>>
     setMaxValue: Dispatch<SetStateAction<number>>
+    resetHandler: () => void
 }
 
 export const Values: React.FC<ValuesType> = (props) => {
+    debugger
     const onChangeMinValue = (e: ChangeEvent<HTMLInputElement>) => {
     props.setMinValue(Number(e.currentTarget.value))
     }
@@ -16,14 +18,16 @@ export const Values: React.FC<ValuesType> = (props) => {
     props.setMaxValue(Number(e.currentTarget.value))
     }
 
+    const setResetHandler = () => {props.resetHandler()}
+
     return (
         <div>
         <div className={s.inputValue}>
-            <div className={s.input} onChange={onChangeMinValue}>Min value: <input  value={props.minValue}/></div>
-            <div className={s.input} onChange={onChangeMaxValue}>Max value: <input  value={props.maxValue}/></div>
+            <div className={s.input} >Min value: <input onChange={onChangeMinValue}  value={props.minValue}/></div>
+            <div className={s.input}>Max value: <input  onChange={onChangeMaxValue} value={props.maxValue}/></div>
         </div>
             <div className={s.buttonsValues}>
-                <button>set</button>
+                <button onClick={setResetHandler}>set</button>
                 <button>set LS</button>
                 <button>get LS</button>
             </div>

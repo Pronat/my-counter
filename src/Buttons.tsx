@@ -18,30 +18,36 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
         if (props.count === props.maxValue) {
             setError('Wrong input!!!')
             alert(error)
-        }   else {
+        } else {
             setError("")
             props.addNumber()
         }
     }
-    const resetHandler = () => {props.reset()}
+    const resetHandler = () => {
+        props.reset()
+    }
     return (
         <div className={s.main}>
-        <div className={s.buttonsMain}>
-            <div className={s.red}>{error}</div>
-            <button className={s.result}>
-                <div className={props.count === props.maxValue || props.count === 0 ? s.red : ""}>{props.count}</div>
-            </button>
-            <div className={s.buttons}>
-                <button disabled={props.count === props.maxValue} onClick={addNumberHandler}>inc</button>
-                <button disabled={props.count === props.minValue} onClick={resetHandler}>reset</button>
+            <div className={s.buttonsMain}>
+                <div className={s.red}>{error}</div>
+                <button className={s.result}>
+                    <div className={props.count === props.maxValue
+                    || props.count === 0
+                    || props.minValue >= props.maxValue
+                        ? s.red : ""}>{props.count}</div>
+                </button>
+                <div className={s.buttons}>
+                    <button disabled={props.count === props.maxValue} onClick={addNumberHandler}>inc</button>
+                    <button disabled={props.count === props.minValue} onClick={resetHandler}>reset</button>
+                </div>
             </div>
-        </div>
             <div className={s.buttonsMain}>
                 <Values
                     minValue={props.minValue}
                     maxValue={props.maxValue}
                     setMinValue={props.setMinValue}
                     setMaxValue={props.setMaxValue}
+                    resetHandler={resetHandler}
                 />
             </div>
         </div>

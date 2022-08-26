@@ -5,7 +5,7 @@ import {Buttons} from "./Buttons";
 
 export function App() {
     let [minValue, setMinValue] = useState<number>(1)
-    let [maxValue, setMaxValue] = useState<number>(20)
+    let [maxValue, setMaxValue] = useState<number>(8)
     const [count, setCount] = useState<number>(0)
 
     const addNumber = () => {
