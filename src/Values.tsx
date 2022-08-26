@@ -1,4 +1,4 @@
-import React, {Dispatch, MouseEventHandler, SetStateAction} from 'react';
+import React, {ChangeEvent, Dispatch, SetStateAction} from 'react';
 import s from './Buttons.module.css'
 
 export type ValuesType = {
@@ -9,18 +9,21 @@ export type ValuesType = {
 }
 
 export const Values: React.FC<ValuesType> = (props) => {
-    const onChangeMinValue = (e: number) => {
-    props.setMaxValue(e.currentTarget.value)
+    const onChangeMinValue = (e: ChangeEvent<HTMLInputElement>) => {
+    props.setMinValue(Number(e.currentTarget.value))
     }
-}
+    const onChangeMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
+    props.setMaxValue(Number(e.currentTarget.value))
+    }
+
     return (
         <div>
         <div className={s.inputValue}>
-            <div className={s.input} onChange={() => {onChangeMinValue}}>Min value: <input  value={props.minValue}/></div>
-            <div className={s.input} onChange={() => {onChangeMaxValue}}>Max value: <input  value={props.maxValue}/></div>
+            <div className={s.input} onChange={onChangeMinValue}>Min value: <input  value={props.minValue}/></div>
+            <div className={s.input} onChange={onChangeMaxValue}>Max value: <input  value={props.maxValue}/></div>
         </div>
             <div className={s.buttonsValues}>
-                <button onClick={}>set</button>
+                <button>set</button>
                 <button>set LS</button>
                 <button>get LS</button>
             </div>
