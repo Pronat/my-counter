@@ -17,6 +17,11 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
 
 
     const addNumberHandler = () => {
+        debugger
+        if (props.count === props.maxValue - 1) {
+            props.addNumber()
+            props.setError("Alert, counter = maxValue")
+        }
         props.addNumber()
     }
 
