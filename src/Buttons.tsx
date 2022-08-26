@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import s from './Buttons.module.css'
 
 export type ButtonsType = {
     count: number
@@ -18,9 +19,9 @@ export const Buttons: React.FC<ButtonsType> = (props) => {
     }
     const resetHandler = () => {props.reset()}
     return (
-        <div>
+        <div className={s.buttonsMain}>
+            <span className={error ? s.red : ''}>Error</span>
             <button>{props.count}</button>
-            <span className>{error}</span>
             <div>
                 <button disabled={props.count === 10} onClick={addNumberHandler}>inc</button>
                 <button disabled={props.count === 0} onClick={resetHandler}>reset</button>

@@ -1,3 +1,15 @@
-.red {
+.buttonsMain {
+ background-color: gray;
+ border: 2px darkgreen solid;
+ border-radius: 25px;
+ height: 200px;
+ width:200px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
 
+}
+
+.red {
+ color: red
 }
