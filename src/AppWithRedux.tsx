@@ -3,7 +3,8 @@ import './App.css';
 import {Buttons} from "./Buttons";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./state/store";
-import {addNumberAC, resetToMinAC} from "./state/counter-reducer";
+import {addNumberAC} from "./state/counter-reducer";
+import {resetToMinAC} from "./state/minValue-reducer";
 
 
 export function AppWithRedux() {

@@ -1,4 +1,4 @@
-import counterReducer, {addNumberAC, resetToMinAC} from "./counter-reducer";
+import counterReducer, {addNumberAC} from "./counter-reducer";
 
 test('addNumber + 1 should be correct', () => {
     let startState = 5
