@@ -1,19 +1,28 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Buttons} from "./Buttons";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "./state/store";
+import {addNumberAC, resetToMinAC} from "./state/counter-reducer";
 
 
 export function AppWithRedux() {
     let [minValue, setMinValue] = useState<number>(1)
     let [maxValue, setMaxValue] = useState<number>(5)
-    const [count, setCount] = useState<number>(0)
+    // const [count, setCount] = useState<number>(0)
+    let count = useSelector<AppRootStateType, number>(state => state.counts)
+    let dispatch = useDispatch()
     let [error, setError] = useState<string | null>(null)
 
     const addNumber = () => {
-        setCount(count + 1)
+        let action = addNumberAC()
+        dispatch(action)
+        // setCount(count + 1)
     }
     const reset = () => {
-        setCount(Number(minValue))
+        let action = resetToMinAC(minValue)
+        dispatch(action)
+        // setCount(Number(minValue))
     }
 
 
