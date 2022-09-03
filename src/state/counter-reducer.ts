@@ -1,21 +1,30 @@
 import React from 'react';
 type StateType = number
 
-type ActionType = any
+type ActionType = addNumberAT | resetToMinAT
 type addNumberAT = ReturnType<typeof addNumberAC>
+type resetToMinAT = ReturnType<typeof resetToMinAC>
 const CounterReducer = (state: StateType, action: ActionType) => {
    switch (action.type) {
        case "ADD-NUMBER":
-           return state
-       case "":
+           return state + 1
+       case "RESET-TO-MIN":
+           return (state = action.minValue)
+       default:
            return state
    }
 };
 
-export const addNumberAC = (countValue: number) => {
+export const addNumberAC = () => {
     return{
-        type: "ADD-NUMBER", countValue: countValue
-    }
+        type: "ADD-NUMBER"
+    }as const
+}
+
+export const resetToMinAC = (minValue: number) => {
+    return{
+        type: "RESET-TO-MIN", minValue
+    }as const
 }
 
 

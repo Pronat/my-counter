@@ -16,6 +16,11 @@ export function AppWithRedux() {
         setCount(Number(minValue))
     }
 
+    const setMaxValueFunction = () => {
+        setMaxValue()
+    }
+
+
 
     return (
         <div>
