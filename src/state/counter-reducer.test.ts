@@ -1,7 +1,7 @@
-import counterReducer from "./counter-reducer";
+import counterReducer, {addNumberAC} from "./counter-reducer";
 
-test('count + 1 should be correct', () => {
+test('addNumber + 1 should be correct', () => {
     let startState = 0
-    let action =
-    let endState = counterReducer(startState, action)
+
+    let endState = counterReducer(startState, addNumberAC(countValue))
 })
