@@ -3,7 +3,7 @@ import './App.css';
 import {Buttons} from "./Buttons";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./state/store";
-import {addNumberAC} from "./state/counter-reducer";
+import {addNumberAC, resetAC} from "./state/counter-reducer";
 
 
 
@@ -21,7 +21,10 @@ export function AppWithRedux() {
         // setCount(count + 1)
     }
     const reset = () => {
-        setCount(Number(minValue))
+        debugger
+        let action = resetAC(minValue)
+        dispatch(action)
+        // setCount(Number(minValue))
     }
 
 
