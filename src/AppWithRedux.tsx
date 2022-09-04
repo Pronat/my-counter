@@ -8,10 +8,12 @@ import {resetToMinAC} from "./state/minValue-reducer";
 
 
 export function AppWithRedux() {
-    let [minValue, setMinValue] = useState<number>(1)
-    let [maxValue, setMaxValue] = useState<number>(5)
+    // let [minValue, setMinValue] = useState<number>(1)
+    // let [maxValue, setMaxValue] = useState<number>(5)
     // const [count, setCount] = useState<number>(0)
     let count = useSelector<AppRootStateType, number>(state => state.counts)
+    let minValue = useSelector<AppRootStateType, number>(state => state.minValue)
+    let maxValue = useSelector<AppRootStateType, number>(state => state.maxValue)
     let dispatch = useDispatch()
     let [error, setError] = useState<string | null>(null)
 

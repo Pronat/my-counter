@@ -1,23 +1,23 @@
 import React from 'react';
 type StateType = number
 
-type ActionType = resetToMinAT
+type ActionType = resetToMaxAT
 
-type resetToMinAT = ReturnType<typeof resetToMinAC>
+type resetToMaxAT = ReturnType<typeof MaxValueReducer>
 let initialState: StateType = 0
 const MaxValueReducer = (state = initialState, action: ActionType) => {
    switch (action.type) {
-       case "RESET-TO-MIN":
-           return (state = action.minValue)
+       case "RESET-TO-MAX":
+           return (state = action.maxValue)
        default:
            return state
    }
 };
 
 
-export const resetToMinAC = (minValue: number) => {
+export const resetToMaxAC = (maxValue: number) => {
     return{
-        type: "RESET-TO-MIN", minValue
+        type: "RESET-TO-MAX", maxValue
     }as const
 }
 
