@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import './App.css';
 import {Buttons} from "./Buttons";
 import {useDispatch, useSelector} from "react-redux";
-import {AppRootStateType} from "./state/store";
-import {addNumberAC, resetAC} from "./state/counter-reducer";
+import {AppRootStateType} from "./bll/store";
+import {addNumberAC, resetAC} from "./bll/counter-reducer";
 
 
 
