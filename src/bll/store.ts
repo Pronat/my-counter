@@ -1,10 +1,11 @@
 import {applyMiddleware, combineReducers, legacy_createStore} from "redux";
-import counterReducer from "./counter-reducer";
+
 import thunk from "redux-thunk";
+import {CounterReducer} from "./counter-reducer";
 
 
 export const rootReducer = combineReducers({
-    counts: counterReducer,
+    counts: CounterReducer,
 
 })
 

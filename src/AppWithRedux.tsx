@@ -3,7 +3,7 @@ import './App.css';
 import {Buttons} from "./Buttons";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./bll/store";
-import {addNumberTC, resetAC} from "./bll/counter-reducer";
+import {addNumberAC, addNumberTC, resetAC} from "./bll/counter-reducer";
 
 
 
@@ -16,11 +16,13 @@ export function AppWithRedux() {
     let [error, setError] = useState<string | null>(null)
 
     const addNumber = () => {
-        dispatch(addNumberTC(value))
+        dispatch(addNumberTC())
         // setCount(count + 1)
     }
     const reset = () => {
-        dispatch(resetAC(minValue))
+        debugger
+        let action = resetAC(minValue)
+        dispatch(action)
         // setCount(Number(minValue))
     }
 
