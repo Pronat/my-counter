@@ -16,14 +16,11 @@ export function AppWithRedux() {
     let [error, setError] = useState<string | null>(null)
 
     const addNumber = () => {
-        let action = addNumberAC()
-        dispatch(action)
+        dispatch(addNumberAC())
         // setCount(count + 1)
     }
     const reset = () => {
-        debugger
-        let action = resetAC(minValue)
-        dispatch(action)
+        dispatch(resetAC(minValue))
         // setCount(Number(minValue))
     }
 

@@ -1,5 +1,6 @@
-import {combineReducers, legacy_createStore} from "redux";
+import {applyMiddleware, combineReducers, legacy_createStore} from "redux";
 import counterReducer from "./counter-reducer";
+import thunk from "redux-thunk";
 
 
 export const rootReducer = combineReducers({
@@ -9,7 +10,7 @@ export const rootReducer = combineReducers({
 
 export type AppRootStateType = ReturnType<typeof rootReducer>
 
-export const store = legacy_createStore(rootReducer)
+export const store = legacy_createStore(rootReducer, applyMiddleware(thunk))
 
 type AppRootStore = typeof store
 
