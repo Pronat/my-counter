@@ -3,27 +3,24 @@ import './App.css';
 import {Buttons} from "./Buttons";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./bll/store";
-import {addNumberAC, addNumberTC, resetAC} from "./bll/counter-reducer";
+import {addNumberAC, addNumberTC, InitialStateType, resetAC} from "./bll/counter-reducer";
 
 
 
 export function AppWithRedux() {
     let [minValue, setMinValue] = useState<number>(1)
     let [maxValue, setMaxValue] = useState<number>(5)
-    // const [count, setCount] = useState<number>(0)
-    let count = useSelector<AppRootStateType, number>(state => state.counts)
+    let count = useSelector<AppRootStateType, InitialStateType>(state => state.counts)
     let dispatch = useDispatch()
     let [error, setError] = useState<string | null>(null)
 
     const addNumber = () => {
         dispatch(addNumberTC())
-        // setCount(count + 1)
     }
     const reset = () => {
         debugger
         let action = resetAC(minValue)
         dispatch(action)
-        // setCount(Number(minValue))
     }
 
 

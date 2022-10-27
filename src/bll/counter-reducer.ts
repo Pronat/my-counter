@@ -1,6 +1,6 @@
 import React from 'react';
 import {Dispatch} from "redux";
-type InitialStateType = typeof initialState
+export type InitialStateType = typeof initialState
 const initialState = {
     value: 0
 }
