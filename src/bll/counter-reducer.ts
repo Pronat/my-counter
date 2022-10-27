@@ -1,14 +1,11 @@
 import React from 'react';
-type InitialStateType = typeof initialState
+type InitialStateType = number
 
 type ActionType = addNumberAT | resetAT
 type addNumberAT = ReturnType<typeof addNumberAC>
 type resetAT = ReturnType<typeof resetAC>
-// let initialState: InitialStateType = 0
-const initialState = {
-    value: 0
-}
-const CounterReducer = (state: InitialStateType = initialState, action: ActionType) => {
+let initialState: InitialStateType = 0
+const CounterReducer = (state = initialState, action: ActionType) => {
    switch (action.type) {
        case "ADD-NUMBER":
            return state + 1
