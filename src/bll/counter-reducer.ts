@@ -26,9 +26,9 @@ export const CounterReducer = (state:InitialStateType = initialState, action: Ac
    }
 };
 
-export const addNumberAC = () => {
+export const addNumberAC = (count: number) => {
     return{
-        type: "ADD-NUMBER"
+        type: "ADD-NUMBER", count
     }as const
 }
 

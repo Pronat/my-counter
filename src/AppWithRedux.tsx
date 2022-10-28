@@ -3,7 +3,7 @@ import './App.css';
 import {Buttons} from "./Buttons";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./bll/store";
-import {addNumberAC, addNumberTC, InitialStateType, resetAC} from "./bll/counter-reducer";
+import {addNumberTC, InitialStateType, resetAC} from "./bll/counter-reducer";
 
 
 
@@ -15,7 +15,7 @@ export function AppWithRedux() {
     let [error, setError] = useState<string | null>(null)
 
     const addNumber = () => {
-        dispatch(addNumberTC())
+        dispatch(addNumberTC(count))
     }
     const reset = () => {
         debugger
